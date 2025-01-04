@@ -2,28 +2,27 @@
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import React from "react";
+import { ReactNode } from "react";
 
 export default function NavbarItem({
   title,
   param,
 }: {
   title: string;
-  param: string;
+  param: ReactNode;
 }) {
   const searchParams = useSearchParams();
   const genre = searchParams.get("genre");
   return (
-    <div>
-      <Link
-        href={`/?genre=${param}`}
-        className={`hover:text-slate-900 font-semibold ${
-          genre === param
-            ? "underline underline-offset-8 decoration-4 decoration-slate-900"
-            : ""
-        }`}
-      >
-        {title}
-      </Link>
-    </div>
+    <Link
+      className={`hover:font-semibold gap-4 ${
+        genre === param
+          ? "underline underline-offset-8 decoration-2 decoration-slate-800"
+          : ""
+      }`}
+      href={`/?genre=${param}`}
+    >
+      {title}
+    </Link>
   );
 }

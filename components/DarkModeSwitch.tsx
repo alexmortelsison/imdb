@@ -1,17 +1,16 @@
 "use client";
-import { BiMoon } from "react-icons/bi";
-import { BiSun } from "react-icons/bi";
+import { Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
 import React from "react";
 
 export default function DarkModeSwitch() {
   const { theme, setTheme } = useTheme();
   return (
-    <div className="hover:text-amber-600 cursor-pointer select-none">
+    <div className="hover:text-amber-600 cursor-pointer">
       {theme === "dark" ? (
-        <BiSun onClick={() => setTheme("light")} />
+        <Sun onClick={() => setTheme("light")} />
       ) : (
-        <BiMoon onClick={() => setTheme("dark")} />
+        <Moon onClick={() => setTheme("dark")} />
       )}
     </div>
   );
