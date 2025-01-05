@@ -10,19 +10,16 @@ export default function SearchBox() {
     router.push(`/search/${search}`);
   };
   return (
-    <form
-      className="flex justify-between px-5 max-w-6xl mx-auto"
-      onSubmit={handleSubmit}
-    >
+    <form onSubmit={handleSubmit} className="max-w-6xl mx-auto flex mt-4">
       <input
         type="text"
-        placeholder="Search keywords"
-        className="w-full h-14 rounded-md placeholder-gray-500 outline-none bg-transparent flex-1"
+        placeholder="Search"
+        className="w-full bg-transparent h-14 placeholder-slate-600 mr-4 outline-none"
         value={search}
         onChange={(e) => setSearch(e.target.value)}
       />
       <button
-        className="text-amber-600 disabled:text-gray-400"
+        className="text-white font-semibold bg-amber-600 px-4 rounded-xl disabled:text-gray-600 disabled:bg-slate-800"
         disabled={search === ""}
       >
         Search
