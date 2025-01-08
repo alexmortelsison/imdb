@@ -11,12 +11,9 @@ export default function HeaderItem({
   Icon: React.ComponentType<{ size: number }>;
 }) {
   return (
-    <Link
-      href={address}
-      className="flex gap-1 hover:text-amber-600 hover:font-semibold"
-    >
+    <Link href={address} className="flex gap-1 items-center">
       <Icon size={20} />
-      <p className="hidden md:inline">{title}</p>
+      <h1 className="hidden sm:inline">{title}</h1>
     </Link>
   );
 }

@@ -1,6 +1,7 @@
 "use client";
-import { useRouter } from "next/navigation";
-import React, { useState } from "react";
+import { SearchIcon, X } from "lucide-react";
+import { usePathname, useRouter } from "next/navigation";
+import React, { useEffect, useState } from "react";
 
 export default function Searchbox() {
   const [search, setSearch] = useState("");
@@ -9,20 +10,38 @@ export default function Searchbox() {
     e.preventDefault();
     router.push(`/search/${search}`);
   };
+  const pathName = usePathname();
+  const reset = () => {
+    setSearch("");
+  };
+  useEffect(() => {
+    pathName === "/" || pathName === "/about" ? setSearch("") : "";
+  }, [pathName]);
+
   return (
-    <form className="flex max-w-6xl mx-auto mt-4" onSubmit={handleSubmit}>
+    <form
+      onSubmit={handleSubmit}
+      className="flex items-center text-sm max-w-6xl mx-auto mt-2 h-8"
+    >
       <input
         type="text"
-        placeholder="Search"
+        placeholder="Search movie"
         value={search}
         onChange={(e) => setSearch(e.target.value)}
-        className="w-full h-14 bg-transparent outline-none"
+        className="w-full bg-transparent outline-none"
       />
       <button
-        className="bg-amber-600 px-2 py-1 rounded-lg disabled:bg-slate-600 disabled:text-slate-400"
+        type="button"
+        className="text-amber-600 disabled:text-slate-500"
         disabled={search === ""}
       >
-        Search
+        <X onClick={reset} size={18} />
+      </button>
+      <button
+        className="text-amber-600 disabled:text-slate-500"
+        disabled={search === ""}
+      >
+        <SearchIcon size={18} />
       </button>
     </form>
   );

@@ -1,11 +1,11 @@
 interface MovieResults {
-  id: string | number;
-  original_title?: string;
+  id: string;
   overview: string;
-  backdrop_path?: string;
   poster_path?: string;
-  vote_count: number;
+  backdrop_path?: string;
+  name?: string;
+  original_title?: string;
   release_date?: string;
   first_air_date?: string;
-  name?: string;
+  vote_count?: number;
 }
