@@ -15,17 +15,13 @@ export default function Searchbox() {
     setSearch("");
   };
   useEffect(() => {
-    pathName === "/" || pathName === "/about" ? setSearch("") : "";
+    pathName === "/" || "/about" ? setSearch("") : "";
   }, [pathName]);
-
   return (
-    <form
-      onSubmit={handleSubmit}
-      className="flex items-center text-sm max-w-6xl mx-auto mt-2 h-8"
-    >
+    <form onSubmit={handleSubmit} className="flex h-8 max-w-6xl mx-auto mb-4">
       <input
         type="text"
-        placeholder="Search movie"
+        placeholder="Search movies"
         value={search}
         onChange={(e) => setSearch(e.target.value)}
         className="w-full bg-transparent outline-none"
@@ -34,14 +30,16 @@ export default function Searchbox() {
         type="button"
         className="text-amber-600 disabled:text-slate-500"
         disabled={search === ""}
+        onClick={reset}
       >
-        <X onClick={reset} size={18} />
+        <X size={20} />
       </button>
       <button
+        type="submit"
         className="text-amber-600 disabled:text-slate-500"
         disabled={search === ""}
       >
-        <SearchIcon size={18} />
+        <SearchIcon size={20} />
       </button>
     </form>
   );
