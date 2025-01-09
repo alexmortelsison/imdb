@@ -6,20 +6,20 @@ import Link from "next/link";
 
 export default function Header() {
   return (
-    <div className="text-sm flex justify-between max-w-6xl mx-auto p-4 border-b border-b-slate-900 dark:border-b-slate-500">
-      <div className="flex items-center gap-3">
+    <div className="flex text-sm items-center p-4 max-w-6xl mx-auto justify-between border-b border-slate-700">
+      <header className="flex gap-3">
         <HeaderItem title={"Home"} address={"/"} Icon={HomeIcon} />
         <HeaderItem title={"About"} address={"/about"} Icon={InfoIcon} />
-      </div>
-      <div className="flex items-center">
+      </header>
+      <header className="flex items-center">
         <DarkModeSwitch />
-        <Link href={"/"}>
-          <span className="ml-2 bg-amber-600 px-2 py-1 font-bold text-lg rounded-lg">
+        <Link href={"/"} className="flex items-center">
+          <span className="text-lg bg-amber-600 px-2 py-1 font-bold rounded-lg ml-2">
             IMDB
           </span>
-          <p className="hidden sm:inline font-semibold ml-1">Clone</p>
+          <p className="font-semibold hidden sm:inline">Clone</p>
         </Link>
-      </div>
+      </header>
     </div>
   );
 }

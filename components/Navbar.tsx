@@ -3,7 +3,7 @@ import NavbarItem from "./NavbarItem";
 
 export default function Navbar() {
   return (
-    <div className="flex gap-4 justify-center mt-4 p-4">
+    <div className="flex gap-4 justify-center mt-8">
       <NavbarItem title={"Trending"} params={"fetchTrending"} />
       <NavbarItem title={"Top Rated"} params={"fetchTopRated"} />
     </div>
