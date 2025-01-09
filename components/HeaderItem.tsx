@@ -13,10 +13,10 @@ export default function HeaderItem({
   return (
     <Link
       href={address}
-      className="flex hover:text-amber-600 items-center gap-1 hover:font-semibold"
+      className="flex items-center hover:text-amber-600 hover:font-bold"
     >
       <Icon size={20} />
-      <p>{title}</p>
+      <h2>{title}</h2>
     </Link>
   );
 }

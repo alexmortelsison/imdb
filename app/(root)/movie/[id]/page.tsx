@@ -13,17 +13,16 @@ export default async function MoviePage({
   );
   const results = await res.json();
   return (
-    <div className="max-w-6xl mx-auto mt-4 flex-col md:flex-row space-x-8 px-4">
+    <div>
       <Image
         src={`https://image.tmdb.org/t/p/original${
           results.poster_path || results.backdrop_path
         }`}
-        alt="photo"
         width={500}
         height={300}
-        className="rounded-t-lg"
+        alt="photo"
+        className="hover:opacity-70 duration-300 rounded-t-lg"
       />
-      <p className="text-center sm:text-left">{results.overview}</p>
     </div>
   );
 }

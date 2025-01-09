@@ -13,7 +13,7 @@ export default function Searchbox() {
   const pathName = usePathname();
   const reset = () => {
     setSearch("");
-    router.push("/");
+    router.push("");
   };
   useEffect(() => {
     pathName === "/" || "/about" ? setSearch("") : "";
@@ -21,21 +21,29 @@ export default function Searchbox() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="max-w-6xl mx-auto flex my-4
-    "
+      className="max-w-6xl mx-auto flex tracking-tighter"
     >
       <input
         type="text"
         placeholder="Search movies"
         value={search}
         onChange={(e) => setSearch(e.target.value)}
-        className="w-full bg-transparent outline-none"
+        className="bg-transparent outline-none w-full h-8 text-sm"
       />
-      <button type="button" onClick={reset}>
-        <X />
+      <button
+        type="button"
+        className="text-amber-600 disabled:text-slate-500 cursor-pointer disabled:cursor-default"
+        onClick={reset}
+        disabled={search === ""}
+      >
+        <X size={18} />
       </button>
-      <button type="submit">
-        <SearchIcon />
+      <button
+        type="submit"
+        className="text-amber-600 disabled:text-slate-500"
+        disabled={search === ""}
+      >
+        <SearchIcon size={18} />
       </button>
     </form>
   );
