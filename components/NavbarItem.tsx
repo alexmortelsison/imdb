@@ -14,12 +14,12 @@ export default function NavbarItem({
   const genre = searchParams.get("genre");
   return (
     <Link
-      className={`hover:font-semibold tracking-tighter ${
-        genre === params ? "text-amber-600 font-bold" : ""
+      className={`hover:font-semibold ${
+        genre === params ? "font-bold text-amber-600 duration-300" : ""
       }`}
       href={`/?genre=${params}`}
     >
-      <p>{title}</p>
+      <h3>{title}</h3>
     </Link>
   );
 }

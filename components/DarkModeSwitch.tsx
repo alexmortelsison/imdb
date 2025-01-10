@@ -6,14 +6,14 @@ import React from "react";
 export default function DarkModeSwitch() {
   const { theme, setTheme } = useTheme();
   return (
-    <div className="hover:text-amber-600 cursor-pointer">
+    <div>
       {theme === "dark" ? (
-        <div>
-          <Sun size={20} onClick={() => setTheme("light")} />
+        <div className="hover:text-amber-600 cursor-pointer">
+          <Sun size={18} onClick={() => setTheme("light")} />
         </div>
       ) : (
         <div>
-          <Moon size={20} onClick={() => setTheme("dark")} />
+          <Moon size={18} onClick={() => setTheme("dark")} />
         </div>
       )}
     </div>
