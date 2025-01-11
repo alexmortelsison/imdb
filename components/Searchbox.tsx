@@ -21,7 +21,7 @@ export default function Searchbox() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="max-w-6xl mx-auto text-sm mt-4 flex px-4"
+      className="flex max-w-6xl mx-auto text-sm mt-4 px-6 lg:px-0"
     >
       <input
         type="text"
@@ -32,17 +32,18 @@ export default function Searchbox() {
       />
       <button
         type="button"
-        disabled={search === ""}
         onClick={reset}
-        className="cursor-pointer"
+        className="text-amber-600 disabled:text-slate-600"
+        disabled={search === ""}
       >
-        <X size={18} className="text-amber-600 disabled:text-slate-600" />
+        <X size={16} onClick={reset} />
       </button>
-      <button type="submit" className="cursor-pointer">
-        <SearchIcon
-          size={18}
-          className="text-amber-600 disabled:text-slate-600"
-        />
+      <button
+        type="submit"
+        className="text-amber-600 disabled:text-slate-600"
+        disabled={search === ""}
+      >
+        <SearchIcon size={16} />
       </button>
     </form>
   );

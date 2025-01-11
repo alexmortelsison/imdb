@@ -8,7 +8,7 @@ export default function DarkModeSwitch() {
   return (
     <div>
       {theme === "dark" ? (
-        <div className="hover:text-amber-600 cursor-pointer">
+        <div>
           <Sun size={18} onClick={() => setTheme("light")} />
         </div>
       ) : (

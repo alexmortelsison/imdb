@@ -13,10 +13,10 @@ export default function HeaderItem({
   return (
     <Link
       href={address}
-      className="flex items-center hover:text-amber-600 hover:font-semibold gap-1"
+      className="flex text-sm hover:text-amber-600 hover:font-semibold"
     >
       <Icon size={20} />
-      <h2 className="text-sm items-center hidden sm:inline">{title}</h2>
+      <h2 className="hidden sm:inline">{title}</h2>
     </Link>
   );
 }

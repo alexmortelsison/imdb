@@ -1,8 +1,8 @@
 interface MovieResults {
   id: string;
   overview: string;
-  name?: string;
   original_title?: string;
+  name?: string;
   poster_path?: string;
   backdrop_path?: string;
   release_date?: string;
